@@ -10,10 +10,12 @@ interface KerjaanSchema {
   detail: string;
   mapel: string;
   drive?: string;
+  tenggat?: Date;
 }
 
 export default function CreatePage() {
   const [submitting, setSubmitting] = useState<boolean>(false);
+  // const [astype, setAstype] = useState<"materi" | "tugas" | string>("");
   const {
     register,
     formState: { errors },
@@ -112,6 +114,21 @@ export default function CreatePage() {
                 })}
                 type="text"
                 placeholder="https://drive.google.com"
+                className="input-class hover:scale-100 block w-full"
+              />
+              {errors.drive && <p className="text-red-500">oi</p>}
+            </div>
+            <div>
+              <label className="text-xl font-semibold">
+                Tenggat (Tugas, Jika ada)
+              </label>
+              <input
+                {...register("tenggat", {
+                  required: false,
+                  valueAsDate: true,
+                })}
+                type="date"
+                // placeholder="09/09/2008"
                 className="input-class hover:scale-100 block w-full"
               />
               {errors.drive && <p className="text-red-500">oi</p>}

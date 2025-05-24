@@ -46,6 +46,11 @@ const Card = (props: { data: kerjaSchema }) => {
       </h2>
       <br />
       <h3 className="text-base text-zinc-600">{props.data.detail}</h3>
+      {props.data.tenggat ? (
+        <h4 className="text-base">
+          Deadline : {props.data.tenggat.toString().slice(0, 10)}
+        </h4>
+      ) : null}
     </div>
   );
 };

@@ -7,6 +7,7 @@ export interface kerjaSchema {
   tipe: string;
   detail: string;
   drive?: string;
+  tenggat?: Date;
 }
 
 const kerjaanSchema: Schema = new Schema({
@@ -16,6 +17,7 @@ const kerjaanSchema: Schema = new Schema({
   tipe: { type: String, required: true },
   detail: { type: String, required: true },
   drive: { type: String },
+  tenggat: { type: Date },
 });
 
 export const Kerjaan =

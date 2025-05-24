@@ -28,6 +28,7 @@ export const POST = async (req: NextRequest) => {
     tipe: body.tipe,
     detail: body.detail,
     drive: body.drive || "",
+    tenggat: body.tenggat,
   })
     .then(() => {
       return NextResponse.json(
